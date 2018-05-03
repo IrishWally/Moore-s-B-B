@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+  <user>
+    <firstName>
+      Paul
+    </firstName>
+    <lastName>
+      Jonson
+    </lastName>
+    <email>
+      paulj@yahoo.com
+    </email>
+    <query>
+      Do you do any seasonal discounts?
+    </query>
+  </user>
+  <user>
+    <firstName>
+      Aldous
+    </firstName>
+    <lastName>
+      Huxley
+    </lastName>
+    <email>
+      huxlaldous@hotmail.com
+    </email>
+    <query>
+      Do you have a book collection?
+    </query>
+  </user>
+  <user>
+    <firstName>
+      Mary
+    </firstName>
+    <lastName>
+      Poppins
+    </lastName>
+    <email>
+      popp54@yahoo.com
+    </email>
+    <query>
+      How many children am I allowed to bring?
+    </query>
+  </user>
+  <user>
+    <firstName>
+      Eve
+    </firstName>
+    <lastName>
+      Smith
+    </lastName>
+    <email>
+      eve4ever@gmail.com
+    </email>
+    <query>
+      Is there a yoga center in a walking distance?
+    </query>
+  </user>
+  <user>
+    <firstName>
+      Mike
+    </firstName>
+    <lastName>
+      Preston
+    </lastName>
+    <email>
+      prestonmike@yahoo.com
+    </email>
+    <query>
+      Can I pay you uppon arrival?
+    </query>
+  </user>
+</Queries>
