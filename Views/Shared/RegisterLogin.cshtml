@@ -1,0 +1,14 @@
+﻿@if (Session["Name"] != null)
+{
+    <span>@Session["Name"], you are logged in</span>
+
+    @Html.ActionLink("Log off", "Logoff", "RegisterLogin", null, new { style = "a:white;float:left;margin-right:25px" })
+
+
+}
+
+else
+{   @Html.ActionLink("Login", "Login", "RegisterLogin", null, new { style = "a:white;float:left; margin-right:25px" })
+    @Html.ActionLink("Register", "Index", "RegisterLogin", null, new { style = "a:white; float:left; margin-right:10px" })
+
+}

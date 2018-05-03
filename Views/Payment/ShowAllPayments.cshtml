@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebCloudCA.Models.Payment>
+@{
+    ViewBag.Title = "ShowBookings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Payments</h2>
+@ViewData["message"]
+@TempData["count"]
+
+<div class="showbookings">
+    <table id="showpayments">
+
+        <tr>
+            <td>Payment Id</td>
+            <td>Card Holder Name</td>
+            <td>Card Type</td>
+            <td>Card Number</td>
+            <td>Security Number</td>
+            <td>Expiry Month</td>
+            <td>Expiry Year</td>
+            <td>Amount</td>
+            <td>Booking Id</td>
+            
+        </tr>
+        @foreach (var payment in Model)
+        {
+
+            <tr>
+                <td>Payment:@payment.PaymentId </td>
+                <td>Card Holder Name: @payment.CardHolderName </td>
+                <td>Card Type: @payment.CardType </td>
+                <td>Card Number: @payment.CardNumber </td>
+                <td>Security Number: @payment.SecurityNum </td>
+                <td>Expiry Month: @payment.ExpMon </td>
+                <td>Expiry Year: @payment.ExpYr </td>
+               <td>Amount: @payment.Amount </td>
+               <td>Booking Id: @payment.BookingId </td>
+               
+            </tr>
+
+        }
+    </table>
+    @Html.ActionLink("Back to Menu", "Index", "Staff");
+
+</div>

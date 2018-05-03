@@ -1,0 +1,41 @@
+﻿@model WebCloudCA.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div id="container">
+    <a id="login"><h2>Login</h2></a>
+    @using (Html.BeginForm("Login", "RegisterLogin", FormMethod.Post))
+    {
+
+
+        <span style="color:red">
+            @Html.ValidationSummary()
+        </span>
+            <div class="login">
+
+                <p>
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email)
+                </p>
+
+                <p>
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password)
+                </p>
+
+                @Html.LabelFor(m => m.UserRole)
+                @Html.DropDownListFor(m => m.UserRole, new List<SelectListItem>
+       {
+           new SelectListItem() {Text= "Customer", Value="Customer" },
+           new SelectListItem() {Text = "Staff", Value = "Staff" },
+           new SelectListItem() {Text = "Admin", Value ="Admin" }
+       })
+                <input id="contactSubmit" type="submit" value="Login" />
+
+            </div>
+
+    }
+</div>

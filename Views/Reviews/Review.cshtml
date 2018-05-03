@@ -1,0 +1,45 @@
+﻿@model WebCloudCA.Models.Review
+@{
+    ViewBag.Title = "Review";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="container">
+    <a id="review"></a>
+    @using (Html.BeginForm("SaveReview", "Reviews", FormMethod.Post))
+    {
+
+        @Html.ValidationSummary()
+        <div class="reviewform">
+            <fieldset>
+                <legend>Give us your Review</legend>
+                <ul>
+                    <li>
+                        @Html.LabelFor(review => review.Name)
+                        @Html.TextBoxFor(review => review.Name)
+                    </li>
+
+
+                    <li>
+                        @Html.LabelFor(review => review.BookingCode)
+                        @Html.TextBoxFor(review => review.BookingCode)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(review => review.Comment)
+                        @Html.TextBoxFor(review => review.Comment)
+                    </li>
+
+                    <li>
+                        <input id="submitreview" type="submit" value="SUBMIT" />
+                    </li>
+
+                </ul>
+
+            </fieldset>
+        </div>
+
+
+    }
+
+</div>

@@ -1,0 +1,69 @@
+﻿@model WebCloudCA.Models.Customer
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+<div class="register">
+
+    @using (Html.BeginForm("Register", "RegisterLogin", FormMethod.Post))
+    {
+        <span style="color:red">
+            @Html.ValidationSummary()
+        </span>
+
+        <p>
+            @Html.LabelFor(m => m.FirstName)<br />
+            @Html.TextBoxFor(m => m.FirstName)
+        </p>
+
+        @*@Html.ValidationMessageFor(model=>model.FirstName)*@
+        <p>
+            @Html.LabelFor(m => m.LastName)<br />
+            @Html.TextBoxFor(m => m.LastName)
+        </p>
+            @*@Html.VlaidationMessageFor(model=>model.LastName)*@
+
+            <p>
+                @Html.LabelFor(m => m.Email)<br />
+                @Html.TextBoxFor(m => m.Email)
+            </p>
+
+
+            <p>
+                @Html.LabelFor(m => m.Phone)<br />
+                @Html.TextBoxFor(m => m.Phone)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.Address)<br />
+                @Html.TextBoxFor(m => m.Address)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.Password)<br />         
+                @Html.PasswordFor(m => m.Password)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.PasswordConfirmation)<br />
+                @Html.PasswordFor(m => m.PasswordConfirmation)
+            </p>
+
+
+            <input id="SubmitReg" type="submit" value="Register" />
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+    }
+
+
+
+</div>

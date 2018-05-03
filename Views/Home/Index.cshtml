@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   <div id="wraper">
+       
+        <section>
+            <img src="~/Images/riverbnb.jpg" alt="moore's bed and breakfast" class="cover" />
+            <div class="center"></div>
+
+            <div id="container">
+                @if (@TempData["SuccessMessage"] != null)
+                {
+                    <script language="javascript">
+                        alert('@TempData["SuccessMessage"]');
+                       
+                    </script>
+                }
+                <article class="welcome">
+                    <h1>Welcome to Moore's House</h1>
+                    <p class="p">
+                         Welcome to Moore's House Bed and Breakfast, proudly established in August 1995. Your host, Gillian, and her two sons,
+                        thank you for taking the time to have a look at our place and invite you to have an enjoyable stay with us.
+                        Our quaint and cozy home has a relaxing cottagy feel, located in a picturesque area of Galway, on a
+                        mature stretch of protected greenbelt space with lovely wooded trails and meandering creek.
+                        A nature lovers paradise. <img src="~/Images/connam.jpg" class="pic" alt="Connamara" />
+                        Whether you are in town on business or a romantic fun filled getaway, Paddington Place offers you a
+                        place to call your home away from home.
+                    </p>
+                    <p class="p">Come stay awhile, relax, unwind and be pampered!<p>
+                    <p class="p">
+                        Our promise to you warm hospitality, a comfy bed and a scrumptious breakfast!
+                        Moore's B&amp;B is ideal for small parties of 8 to 10 people when the whole house and its facilities are at your
+                        exclusive disposal, friends and family events can be celebrated and fully catered by Gillian.
+                        Moore's B&amp;B has been used as a venue for team building exercises as well.
+                    </p>
+                    <p class="p">
+                        You’ll have superb views of the river and the surrounding countryside from your bedroom.
+                        The house has bedrooms in fresh bright colours and modern ensuites.
+                        The furnishings of the house are mostly antiques collected over many years and tastefully selected for the different rooms.
+                    </p>
+                    <p>You are welcome in our home, Moore's Bed and Breakfast!</p>
+
+                </article>
+
+
+                <article class="welcome">
+                    <h1>TripAdvisor Excellence Award</h1>
+                    <p>
+                        Moore's B&amp;B has won the 2015 and 2016 TripAdvisor Award, thanks to you, our loyal customers that give your @Html.ActionLink(" feedback","Reviews","Home")
+                        so that we can be better!
+                    </p><p> Please, feel free to rate us and to let us know how Moore's B&amp;B can make your stay even better!</p>
+
+                    <img src="~/Images/coetr.png" alt="2016 TripAdvisor Exelence Awawrd" />
+                    <img src="~/Images/2015.jpg" alt="2015 TripAdvisor Exelence Award" />
+                </article>
+                <article class="welcome">
+                    <p>Follow us on social media and show us your love!</p>
+                    <a href='#' target="_blank"><img src="~/Images/fbr.png" alt="Moore's B&amp;B Facebook page"></a>
+                    <a href='#' target="_blank"><img src="~/Images/twr.png" alt="Moore's B&amp;B Twitter page"></a>
+                    <a href='#' target="_blank"><img src="~/Images/tar.png" alt="Moore's B&amp;B TripAdvisor page"></a>
+                    <a href='#' target="_blank"><img src="~/Images/gpr.png" alt="Moore's B&amp;B Google+ page"></a>
+
+
+                </article>
+            </div>
+        </section>
+       
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="~/Scripts/scripts.js"></script>
+    <script src="https://use.fontawesome.com/0015bde30a.js"></script>
+

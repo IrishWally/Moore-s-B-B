@@ -1,0 +1,41 @@
+﻿@model WebCloudCA.Models.User
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="container">
+    <a id="contactus"></a>
+    @using (Html.BeginForm("SaveContact", "ContactUs", FormMethod.Post))
+    {
+        //<p>Required fields are marked with an asterisk *</p>
+
+        @Html.ValidationSummary()
+        <div class="contactform">
+            <fieldset>
+                <legend>Web Master Login</legend>
+
+                <ul>
+                    <li>
+                        @Html.LabelFor(user => user.Username)
+                        @Html.TextBoxFor(user => user.Username)
+                    </li>
+
+                    <li>
+                        @Html.LabelFor(user => user.Password)
+                        @Html.TextBoxFor(user => user.Password)
+                    </li>
+                    
+                    <li>
+                        <input id="contactSubmit" type="submit" value="Login" />
+                    </li>
+                </ul>
+            </fieldset>
+            @Html.ActionLink("Show All Bookings", "ShowBookings","Booking");
+            @Html.ActionLink("Show Contact Us Requests", "ShowContactUs", "Contact");
+        </div>
+
+    }
+</div>
+
+

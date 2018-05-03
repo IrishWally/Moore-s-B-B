@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebCloudCA.Models.Booking>
+@{
+    ViewBag.Title = "ShowBookings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Bookings</h2>
+@ViewData["message"]
+@TempData["count"]
+
+<div class="showbookings">
+    <table>
+        <tr>
+            <th><p>Booking Id</p></th>
+            <th><p>Arrival Date</p></th>
+            <th><p>Departure Date</p></th>
+            <th><p>Nights</p></th>
+            <th><p>Price</p></th>
+            <th><p>Customer Id</p></th>
+            <th><p>Room Type</p></th>
+            <th><p>Review</p></th>
+            <th><p>Payment Made</p></th>
+        </tr>
+        @foreach (var booking in Model)
+        {
+
+            <tr>
+                <td>@booking.BookingId </td>
+                <td>@booking.ArrivalDate </td>
+                <td>@booking.DepartureDate </td>
+                <td>@booking.Nights</td>
+                <td>@booking.Price</td>
+                <td>@booking.CustomerId </td>
+                <td>@booking.RoomType</td>
+                <td>@booking.Review </td>               
+                <td>@booking.PaymentMade </td>
+           
+             </tr>
+
+
+
+
+
+        }
+    </table>
+
+    @Html.ActionLink("Back to Menu","Index", "Staff");
+
+</div>

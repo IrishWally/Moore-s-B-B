@@ -1,0 +1,34 @@
+﻿
+@using System.Xml
+@{
+    ViewBag.Title = "RSS Feed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>@ViewData["title"]</h2>
+        @foreach (XmlNode node in (XmlNodeList)ViewData["list"])
+        {
+
+            if (node.Name == "item")
+            {
+                <div style="width:40%;background-color:lightskyblue;">
+                    <h3><a href="@node["link"].InnerText">@node["title"].InnerText</a></h3>
+                    <p>@node["description"].InnerText</p>
+
+                </div>
+            }
+        }
+    </div>
+</body>
+</html>
+
+

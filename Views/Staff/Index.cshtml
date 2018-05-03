@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="container">
+    <a id="contactus"></a>
+    <h2>Staff Access </h2>
+    <h3>Options</h3>
+    <ul>
+        <li>
+            <p>@Html.ActionLink("Show all Bookings", "ShowBookings", "Booking")</p>
+        </li>
+        <li>
+            <p>@Html.ActionLink("Show all Payments", "ShowAllPayments", "Payment")</p>
+        </li>
+        <li>
+            <p>@Html.ActionLink("Show all Registered Customers", "ShowAllCustomers", "RegisterLogin")</p>
+        </li>
+
+    </ul>
+    </div>
+</div>
+
+
+

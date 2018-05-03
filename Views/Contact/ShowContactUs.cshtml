@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WebCloudCA.Models.Contact>
+@{
+    ViewBag.Title = "ShowContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowContactUs</h2>
+<div class="showbookings">
+    @foreach (var contactus in Model)
+    {
+        <p>
+            <h4>First Name: @contactus.FirstName</h4>
+            <h4>Last Name: @contactus.LastName</h4>
+            <h4>Email: @contactus.Email</h4>
+            <h4>Query: @contactus.Query </h4>
+        
+        </p>
+
+    }
+    @Html.ActionLink("Back to Menu", "Login", "Login");
+
+</div>

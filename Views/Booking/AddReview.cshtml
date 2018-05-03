@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Reviews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="container">
+
+    <aside>
+        <form class="reviewform">
+            <h1>Give us your Review</h1>
+            <ul>
+                <li>
+                    <label for="fn">Name </label>
+                    <input type="text" name="fname" id="fn" required />
+                </li>
+                <li>
+                    <label for="bcd">Booking Code </label>
+                    <input type="text" id="bcd" required />
+                <li>
+                    <label for="cm">Comments</label>
+                    <input type="text" id="cm" />
+                </li>
+                <li>
+                    <input type="submit" value="Review" />
+                </li>
+
+            </ul>
+            <p>You will find your booking code on the receipt from your stay</p>
+        </form>
+    </aside>
+  
+
+
+    <article class="welcome">
+        <h1>TripAdvisor Excellence Award</h1>
+        <p>
+            Moore's B&amp;B has won the 2015 and 2016 TripAdvisor Award, thanks to you, our loyal customers that give your<a href="reviews.html"> feedback </a>
+            so that we can be better!
+        </p><p> Please, feel free to rate us and to let us know how Moore's B&amp;B can make your stay even better!</p>
+
+        <img src="~/Images/coetr.png" alt="2016 TripAdvisor Exelence Awawrd" />
+        <img src="~/Images/2015.jpg" alt="2015 TripAdvisor Exelence Award" />
+    </article>
+    <article class="welcome">
+        <p>Follow us on social media and show us your love!</p>
+        <a href='#' target="_blank"><img src="~/Images/fbr.png" alt="Moore's B&amp;B Facebook page"></a>
+        <a href='#' target="_blank"><img src="~/Images/twr.png" alt="Moore's B&amp;B Twitter page"></a>
+        <a href='#' target="_blank"><img src="~/Images/tar.png" alt="Moore's B&amp;B TripAdvisor page"></a>
+        <a href='#' target="_blank"><img src="~/Images/gpr.png" alt="Moore's B&amp;B Google+ page"></a>
+    </article>
+</div>
+
+<script src="https://use.fontawesome.com/0015bde30a.js"></script>

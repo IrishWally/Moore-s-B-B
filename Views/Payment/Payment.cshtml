@@ -1,0 +1,65 @@
+﻿@model WebCloudCA.Models.Payment
+@{
+    ViewBag.Title = "Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Payment</h2>
+@TempData["Message"]
+@ViewData["message"]
+<div id="paymentpage">
+    @using (Html.BeginForm("MakePayment", "Payment", FormMethod.Post))
+    {
+
+        @Html.ValidationSummary()
+        <fieldset>
+            <legend><h1>Make Payment</h1></legend>
+
+            <ul>
+                <li>
+                    @Html.LabelFor(payment => payment.CardHolderName)
+                    @Html.TextBoxFor(payment => payment.CardHolderName)
+                </li>
+                <li>
+                    @Html.LabelFor(payment => payment.CardType)
+                    @Html.TextBoxFor(payment => payment.CardType)
+                </li>
+
+                <li>
+                    @Html.LabelFor(payment => payment.CardNumber)
+                    @Html.TextBoxFor(payment => payment.CardNumber)
+                </li>
+
+                <li>
+                    @Html.LabelFor(payment => payment.SecurityNum)
+                    @Html.TextBoxFor(payment => payment.SecurityNum)
+                </li>
+
+                <li>
+                    @Html.LabelFor(payment => payment.ExpMon)
+                    @Html.TextBoxFor(payment => payment.ExpMon)
+                </li>
+                <li>
+                    @Html.LabelFor(payment => payment.ExpYr)
+                    @Html.TextBoxFor(payment => payment.ExpYr)
+                </li>
+                <li>
+                    @Html.LabelFor(payment => payment.Amount )
+                    :$@Html.TextBoxFor(payment => payment.Amount, new { Value = @TempData["Price"] })
+                    
+                    
+                </li>
+                <li>
+                    <input id="Submit1" type="submit" value="MakePayment" />
+                </li>
+                <!--(payment => payment.Amount,(decimal)ViewBag.amount) -->
+
+             <li>
+                 <p><br /></p>
+             </li>
+                </ul>
+        </fieldset>
+
+    }
+
+</div>

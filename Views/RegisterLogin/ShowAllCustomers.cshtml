@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebCloudCA.Models.Customer>
+@{
+    ViewBag.Title = "ShowAllCustomers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowAllCustomers</h2>
+
+@ViewData["message"]
+@TempData["count"]
+<div class="showbookings">
+    <table>
+        <tr>
+            <th><p>Customer Id</p></th>
+            <th><p>First Name</p></th>
+            <th><p>Last Name</p></th>
+            <th><p>Email</p></th>
+            <th><p>Phone</p></th>
+            <th><p>Address</p></th>
+            <th><p>Password</p></th>           
+        </tr>
+        @foreach (var cus in Model)
+        {
+
+            <tr>
+                <td>@cus.Customerid </td>
+                <td>@cus.FirstName </td>
+                <td>@cus.LastName </td>
+                <td>@cus.Email </td>
+                <td>@cus.Phone </td>
+                <td>@cus.Address </td>
+                <td>@cus.Password </td>
+           
+            </tr>
+
+
+        }
+    </table>
+
+    @Html.ActionLink("Back to Menu", "Index", "Staff");
+
+</div>

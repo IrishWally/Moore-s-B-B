@@ -1,0 +1,171 @@
+﻿@model WebCloudCA.Models.Booking
+
+
+ 
+@{
+    ViewBag.Title = "BookARoom";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+ 
+}
+@ViewData["Message"]
+@ViewData["message"]
+        <div id="container">
+            <a id="bookaroom"></a>
+            @using (Html.BeginForm("Save", "Booking", FormMethod.Post))
+            {
+                //<p>Required fields are marked with an asterisk *</p>
+                <div class="bookp">
+                    @Html.ValidationSummary()
+                    <fieldset>
+                        <legend><h1>Book your Room</h1></legend>
+
+                        <ul>
+                            <!--<li>
+                                Html.LabelFor(booking => booking.FirstName)
+                                Html.TextBoxFor(booking => booking.FirstName)
+                            </li>
+
+                            <li>
+                                Html.LabelFor(booking => booking.LastName )
+                                Html.TextBoxFor(booking => booking.LastName)
+                            </li>-->
+                            <li><h3>Already Registered? Then enter your email here</h3>
+                            @Html.ActionLink("Register Now","Index","RegisterLogin")</li>
+                            <li>
+                                @Html.LabelFor(booking => booking.Email)
+                                @Html.TextBoxFor(booking => booking.Email)
+                            </li>
+
+                           <!-- <li>
+                                Html.LabelFor(booking => booking.Phone)
+                                Html.TextBoxFor(booking => booking.Phone)
+                            </li>
+
+                            <li>
+                                Html.LabelFor(booking => booking.Address )
+                                Html.TextBoxFor(booking => booking.Address )
+                            </li>-->
+                            
+                            <div class="form-group">
+                                @Html.LabelFor(booking => booking.ArrivalDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(booking => booking.ArrivalDate, new { id="datetimearr", htmlAttributes = new { @class = "form-control", placeholder = "Arrival Date", @readonly = "false" , @id="datetimearr", @type="datetime"} })
+                                    @Html.ValidationMessageFor(booking => booking.ArrivalDate, "", new { @class = "text-danger" })
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(booking => booking.DepartureDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(booking => booking.DepartureDate, new { id="datetimedep", htmlAttributes = new { @class = "form-control", placeholder = "Departure Date", @readonly = "false", @id = "datetimedep", @type="datetime", @onchange = "DateChangefunc(this.value)" } })
+                                        @Html.ValidationMessageFor(booking => booking.DepartureDate, "", new { @class = "text-danger" })
+                                    </div>
+                                    </div>
+                                
+                                <li>
+
+                                    @Html.LabelFor(booking => booking.RoomType)
+                                    @Html.DropDownListFor(booking => booking.RoomType, new List<SelectListItem>
+
+                                {
+
+                                new SelectListItem() {Text= "The Wild Atlantic Way Suite", Value="WildAtlantic" },
+                                new SelectListItem() {Text = "The Moher Suite", Value = "Moher" },
+                                new SelectListItem() {Text = "The West Suite", Value ="West" },
+                                new SelectListItem() {Text = "The Connacht Suite ", Value ="Connacht" }
+                       }, new { id = "roomlist", @onchange = "RoomChangefunc(this.value)" } )
+
+         
+                                </li>
+                            
+                            <li>
+                                @Html.LabelFor(booking => booking.Nights)
+                                @Html.TextBoxFor(booking => booking.Nights, new { id = "Nights",value="", htmlAttributes = new { @class = "form-control" , @id="Nights", @name="Nights"  } })
+                            </li>
+                            <li>
+                                @Html.LabelFor(booking => booking.Price)
+                                @Html.TextBoxFor(booking => booking.Price, new { id = "Price" ,value=""})
+                            </li>
+                        
+                     
+                                    <li>
+                                        <input id="Submit1" type="submit" value="Book Now" />
+                                    </li>
+                        </ul>
+                    </fieldset>
+                </div>
+              
+            }
+            
+            
+            <article class="welcome">
+                <h1>TripAdvisor Excellence Award</h1>
+                <p>
+                    Moore's B&amp;B has won the 2015 and 2016 TripAdvisor Award, thanks to you, our loyal customers that give your @Html.ActionLink("feedback", "Reviews","Home")
+                    so that we can be better!
+                </p><p> Please, feel free to rate us and to let us know how Moore's B&amp;B can make your stay even better!</p>
+
+                <img src="~/Images/coetr.png" alt="2016 TripAdvisor Exelence Awawrd" />
+                <img src="~/Images/2015.jpg" alt="2015 TripAdvisor Exelence Award" />
+            </article>
+            <article class="welcome">
+                <h3>Follow us on social media and show us your love!</h3>
+                <a href='#' target="_blank"><img src="~/Images/fbr.png" alt="Moore's B&amp;B Facebook page"></a>
+                <a href='#' target="_blank"><img src="~/Images/twr.png" alt="Moore's B&amp;B Twitter page"></a>
+                <a href='#' target="_blank"><img src="~/Images/tar.png" alt="Moore's B&amp;B TripAdvisor page"></a>
+                <a href='#' target="_blank"><img src="~/Images/gpr.png" alt="Moore's B&amp;B Google+ page"></a>
+            </article>
+        </div>
+     
+           <script type="text/javascript">
+
+     $(document).ready(function () {
+         $('input[type=datetime]').datepicker({
+             dateFormat: "dd/M/yy",
+             changeMonth: true,
+             changeYear: true,
+             yearRange: "-60:+0"
+         });
+
+     });
+</script>
+<script>
+    //Add number of nights based on dates selected
+function DateChangefunc(val)
+{
+   
+    var date1 = new Date(document.getElementById("datetimearr").value);
+    var date2 = new Date(document.getElementById("datetimedep").value);
+    var nights= parseInt((date2 - date1) / (24 * 3600 * 1000));
+    if (nights < 0) {
+        nights = "Choose valid dates";
+    }
+    document.getElementById("Nights").value = nights;
+}
+</script>
+<!--JS for setting price based on room selected and numbre of nights-   WildAtlantic, Moher,West, Connacht-->
+<script>
+function RoomChangefunc(val)
+{
+    //30, 35,45,55
+    var totalprice = 0;
+    var room = document.getElementById("roomlist").value;
+    var nights = document.getElementById("Nights").value;
+    if (room == "WildAtlantic") {
+        totalprice = 30 * nights;
+    }
+    else if (room == "Moher") {
+        totalprice = 35 * nights;
+    }
+    else if (room == "West") {
+        totalprice = 45 * nights;
+    }
+    else if (room == "Connacht") {
+        totalprice = 55 * nights;
+    }
+  
+    document.getElementById("Price").value = totalprice;
+}
+</script>
+
+
+        <script src="https://use.fontawesome.com/0015bde30a.js"></script>

@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "FAQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+        <div class="faq">
+            <a><h1>Frequently Asked Questions</h1></a>
+
+            <article>
+                <h2 id="question">Where are we?</h2>
+                <p id="answer">Next to a red house.</p>
+            </article>
+            <article>
+                <h2 id="question">How can you find us?</h2>
+                <p id="answer">You have to Google that.</p>
+            </article>
+            <article>
+                <h2 id="question">Will you come in late?</h2>
+                <p id="answer">
+                    If you do, we 'll be sleeping. Don't knock on the door.
+                </p>
+            </article>
+            <article>
+                <h2 id="question">Can I smoke in the room?</h2>
+                <p id="answer">
+                    Sorry, all rooms are strictly for non-smokers.
+                </p>
+            </article>
+            <article>
+                <h2 id="question">Is there any car Parking provided?</h2>
+                <p id="answer">
+                    Yes, there is free private off street car park
+                </p>
+            </article>
+            <article>
+                <h2 id="question">Do I have to pay for breakfast?</h2>
+                <p id="answer">No, it is included in the rate</p>
+            </article>
+            <article>
+                <h2 id="question">Are pets allowed?</h2>
+                <p id="answer">No, but we can recomment an excellent pet-hotel at the area, so that you can visit your little frined</p>
+            </article>
+
+        </div>
+       
+    <script src="https://use.fontawesome.com/0015bde30a.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="~/Scripts/scripts.js"></script>
+    <script>$(document).ready(function () {
+    $("p").hide();
+    $("h2").click(function () {
+        $(this).next("p").slideToggle(500);
+    });
+}); </script>
+

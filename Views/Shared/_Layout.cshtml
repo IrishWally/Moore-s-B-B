@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -</title>
+   
+  
+   <!-- <title>Moore's B&amp;B Meet Gillian Moore</title> --> 
+    <!--[if lt IE 9]>
+        <script src="
+        http://html5shim.googlecode.com/svn/trunk/html5.js">
+    </script>
+    <![endif]-->
+    <link href="~/Content/reset.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+ <!--RenderSection("Scripts", required: false)-->
+
+    <script src="@Url.Content("~/Scripts/jquery-3.1.1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Content/themes/base/jquery-ui.min.css")" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+   <!-- Insert Headers, nav, footer-->
+    <div id="wraper">
+
+        <header>
+            <div id="header">
+                <a href="index.html"><img src="~/Images/uplogo.jpg" alt="Moore's Bed and Breakfast Logo" id="logo" /></a>
+                <nav>
+                    @RenderPage("RegisterLogin.cshtml")
+                    @RenderSection("Logged", false)
+                    <ul>
+                        <!--               controller on the left, text on the right-->
+                        <li>@Html.ActionLink("HOME", "Index", "Home")
+                        <ul>
+                            <li>@Html.ActionLink("CONTACT US","ContactUs","Contact")</li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href='#'>ABOUT</a>
+                            <ul>
+
+                                <li>@Html.ActionLink("MEET YOUR HOST", "MeetYourHost", "Home")</li>
+
+                                <li>@Html.ActionLink("REVIEWS", "Reviews", "Booking")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href='#'>ROOM</a>
+                            <ul>
+                                <li>@Html.ActionLink("SUITES", "Suites", "Home")</li>
+                                <li>@Html.ActionLink("BOOK A ROOM", "BookARoom", "Booking")</li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            @Html.ActionLink("PLAN YOUR STAY", "PlanYourStay", "Home")
+                            
+                            </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href='#'>ATTRACTIONS</a>
+                            <ul>               
+                                <li>@Html.ActionLink("GALLERY", "Gallery", "Home")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            @Html.ActionLink("FAQ", "FAQ", "Home")
+                            
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- render the body of page your on-->
+            @RenderBody();
+        </main>
+        <div id="footer">           
+            <footer>
+                <div>
+                    <img src="~/Images/banlogo.jpg" alt="Moore's Bed and Breakfast Logo" id="logofoot" />
+                    <p class="socialmedia">
+                        <a href='#' target="_blank"><img src="~/Images/fbr.png" alt="Moore's B&amp;B Facebook page"></a>
+                        <a href='#' target="_blank"><img src="~/Images/twr.png" alt="Moore's B&amp;B Twitter page"></a>
+                        <a href='#' target="_blank"><img src="~/Images/tar.png" alt="Moore's B&amp;B TripAdvisor page"></a>
+                        <a href='#' target="_blank"><img src="~/Images/gpr.png" alt="Moore's B&amp;B Google+ page"></a>
+                    </p>
+                </div>
+                <div id="award">                   
+                   
+                    <ul class="sitemap">
+
+                        <li>@Html.ActionLink("HOME", "Index", "Home")</li>
+
+                        <li>
+                            @Html.ActionLink("MEET YOUR HOST", "MeetYourHost", "Home")
+                        </li>
+                        <li> @Html.ActionLink("REVIEWS", "Review", "Home")</li>
+                        <li> @Html.ActionLink("SUITES", "Suites", "Home")</li>
+                        <li>@Html.ActionLink("THINGS TO DO", "PlanYourStay", "Home")</li>
+                        <li>@Html.ActionLink("FAQ", "FAQ", "Home")</li>
+                        <li>@Html.ActionLink("GALLERY", "Gallery", "Home")</li>
+                        <li>@Html.ActionLink("WEBMASTER LOGIN", "Login", "Login")</li>
+                        <li>@Html.ActionLink("RSS", "Index", "Rss")</li>
+                        <li>@Html.ActionLink("SITEMAP", "Sitemap", "Home")</li>
+                     
+                    </ul>
+                    
+
+                </div>
+                <div id="info">
+                    <ul>
+                        <li>TripAdvisor Awarded</li>
+                        <li><i class="fa fa-map-marker fa-2x"></i></li>
+                        <li>Moore's House B &amp; B Freeport Barna Co. Galway </li>
+                        <li><i class="fa fa-phone fa-2x"></i></li>
+                        <li>Tel: +353 (0)91 672 340</li>
+                        <li><i class="fa fa-envelope fa-2x"></i></li>
+                        <li>mooreshouse@gmail.com</li>
+                    </ul>
+                </div>
+
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2387.130531010002!2d-9.1510628!3d53.2513607!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485bbd74ecd30e69%3A0x2600c7a819c81dc2!2zRnJlZXBvcnQsIENvLiDOk866zqzOu86zzr_Phc61z4o!5e0!3m2!1sel!2sie!4v1481451522207" width="400" height="300" style="border:0" allowfullscreen></iframe>
+                </div>
+            </footer>
+        </div>
+        </div>
+</body>
+</html>
